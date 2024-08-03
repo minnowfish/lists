@@ -16,14 +16,14 @@ impl<T> List<T> {
         List { head: None}
     }
 
-    pub fn prepend(&self, elem: T) -> List<T> { //try replacing List<T> with Self later
+    pub fn prepend(&self, elem: T) -> Self{ //try replacing List<T> with Self later
         List { head: Some(Rc::new(Node {
             elem: elem,
             next: self.head.clone(),
         }))}
     }
 
-    pub fn tail(&self) -> List<T> {
+    pub fn tail(&self) -> Self {
         List { head: self.head.as_ref().and_then(|node| node.next.clone()) }
     }
 
