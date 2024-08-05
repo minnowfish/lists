@@ -16,7 +16,7 @@ impl<T> List<T> {
         List { head: None}
     }
 
-    pub fn prepend(&self, elem: T) -> Self{ //try replacing List<T> with Self later
+    pub fn prepend(&self, elem: T) -> Self{
         List { head: Some(Rc::new(Node {
             elem: elem,
             next: self.head.clone(),
